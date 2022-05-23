@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Program Horoskop</h1>
+    <button type="button">Click here!</button>
+    <p>Keberuntungan Anda hari ini:</p>
+    <hr>
+    <div id="hasil-ramal">
+    <!-- Hasil cetak disini -->
+    </div>
+
+    <!-- code js -->
+    <script>
+        const tombol = document.querySelector('button');
+
+        // Jika tombol diklik, maka akan menjalankan fungsi
+        tombol.addEventListener('click', function() {
+            const hasilnya = document.createElement("p");
+            const divhasilramal = document.getElementById("hasil-ramal");
+
+            const randomNumber = Date.now() % 7;
+            // console.log(randomNumber);
+
+            switch(randomNumber) {
+                case 0:
+                    hasilnya.innerHTML = 'Luar Biasa!';
+                    break;
+                case 1:
+                    hasilnya.innerHTML = 'Hebat!';
+                    break;
+                case 2:
+                    hasilnya.innerHTML = 'Baik!';
+                    break;
+                case 3:
+                    hasilnya.innerHTML = 'Lumayan!';
+                    break;
+                case 4:
+                    hasilnya.innerHTML = 'Biasa saja!';
+                    break;
+                case 5:
+                    hasilnya.innerHTML = 'Buruk!';
+                    break;
+                case 6:
+                    hasilnya.innerHTML = 'Mengerikan!';
+                    break;
+            }
+
+            // Hasilnya ditambahkan ke div hasil-ramal
+            divhasilramal.append(hasilnya);
+        });
+    </script>
+</body>
+</html>
