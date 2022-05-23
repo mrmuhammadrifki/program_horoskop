@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Minta Saran</title>
+    </head>
+    <body>
+        <h1>Tes Mood</h1>
+
+        <button type="button">Minta saran dong</button>
+
+        <div id="hasil-ramal">
+            <!-- hasil cetak disini -->
+        </div>
+
+
+        <script>
+            const tombol = document.querySelector('button');
+
+            // kalo tombol di klik, maka akan menjalankan fungsi
+            tombol.addEventListener('click', function() {
+                const hasilnya = document.createElement("p");
+                const divhasilramal = document.getElementById("hasil-ramal");
+
+                // acak array
+                const array = [1,1,1,1,1,1,2,2,2,3]
+                const hasilacak = array[Math.floor(Math.random() * array.length)];
+                // console.log(hasilacak);
+
+                switch (hasilacak) {
+                    case 1:
+                        hasilnya.innerHTML = 'Healing dulu Kii';
+                        break;
+                    case 2:
+                        hasilnya.innerHTML = 'Lanjut belajarnya';
+                        break;
+                    default:
+                        hasilnya.innerHTML = 'Istirahat bentar..';
+                        break;
+                }
+                
+                // hasilnya ditambahkan ke div hasil-ramal
+                divhasilramal.append(hasilnya);
+
+            });
+        </script>
+    </body>
+</html>
